@@ -31,8 +31,8 @@ elif args.benchmark == 'channel-res':
     channels = [int(c) for c in args.arch.split(', ')]
     operation_id_list_str = ''.join(str(int(c / bc)) for bc, c in zip(base_channels, channels))
     performance = {
-        'rank': data[args.arch]['rank'],
-        'val_acc': data[args.arch]['mean'],
+        'rank': data[operation_id_list_str]['rank'],
+        'val_acc': data[operation_id_list_str]['mean'],
     }
 
 elif args.benchmark == 'channel-mob':
@@ -46,8 +46,8 @@ elif args.benchmark == 'channel-mob':
     channels = [int(c) for c in args.arch.split(', ')]
     operation_id_list_str = ''.join(str(int(c / bc)) for bc, c in zip(base_channels, channels))
     performance = {
-        'rank': data[args.arch]['rank'],
-        'val_acc': data[args.arch]['mean'],
+        'rank': data[operation_id_list_str]['rank'],
+        'val_acc': data[operation_id_list_str]['mean'],
     }
 
 elif args.benchmark == '201-cifar10':
