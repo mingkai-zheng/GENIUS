@@ -59,7 +59,6 @@ elif args.benchmark == '201-cifar10':
     performance = {
         'rank' : data[operation_id_list_str]['rank'],
         'val_acc'  : data[operation_id_list_str]['val_acc_200'],
-        'val_loss'  : data[operation_id_list_str]['val_loss_200'],
         'test_acc' : data[operation_id_list_str]['test_acc_200'],
     }
 
@@ -72,7 +71,6 @@ elif args.benchmark == '201-cifar100':
     performance = {
         'rank' : data[operation_id_list_str]['rank'],
         'val_acc'  : data[operation_id_list_str]['val_acc_200'],
-        'val_loss'  : data[operation_id_list_str]['val_loss_200'],
         'test_acc' : data[operation_id_list_str]['test_acc_200'],
     }
 elif args.benchmark == '201-imagenet':
