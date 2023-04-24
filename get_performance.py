@@ -21,24 +21,30 @@ if args.benchmark == 'nas-macro':
     }
 
 elif args.benchmark == 'channel-res':
-    benchmark_file = open('benchmark/Results_ResNet.json')  
+    benchmark_file = open('benchmark/Results_ResNet.json')
     data = json.load(benchmark_file)
     keys = list(data.keys())
     rank = np.array([data[k]['mean'] for k in keys]).argsort().argsort()
     for k, r in zip(keys, rank):
         data[k]['rank'] = (4 ** 7) - r
+    base_channels = [64, 64, 64, 128, 128, 128, 128]
+    channels = [int(c) for c in args.arch.split(', ')]
+    operation_id_list_str = ''.join(str(int(c / bc)) for bc, c in zip(base_channels, channels))
     performance = {
         'rank': data[args.arch]['rank'],
         'val_acc': data[args.arch]['mean'],
     }
 
 elif args.benchmark == 'channel-mob':
-    benchmark_file = open('benchmark/Results_MobileNet.json')  
+    benchmark_file = open('benchmark/Results_MobileNet.json')
     data = json.load(benchmark_file)
     keys = list(data.keys())
     rank = np.array([data[k]['mean'] for k in keys]).argsort().argsort()
     for k, r in zip(keys, rank):
         data[k]['rank'] = (4 ** 7) - r
+    base_channels = [32, 192, 192, 192, 64, 384, 256]
+    channels = [int(c) for c in args.arch.split(', ')]
+    operation_id_list_str = ''.join(str(int(c / bc)) for bc, c in zip(base_channels, channels))
     performance = {
         'rank': data[args.arch]['rank'],
         'val_acc': data[args.arch]['mean'],
