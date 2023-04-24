@@ -1,6 +1,6 @@
 # Can GPT-4 Perform Neural Architecture Search?
 
-## Retrival Performance From Benchmark
+## Retrieve Performance From Benchmark
 
 ### * NAS-Bench-Macro 
 ```
