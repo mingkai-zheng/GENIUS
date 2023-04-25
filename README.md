@@ -2,6 +2,26 @@
 
 For details, see [Paper Link](https://arxiv.org/pdf/2304.10970.pdf) by Mingkai Zheng, Xiu Su, Shan You, Fei Wang, Chen Qian, Chang Xu, and Samuel Albanie.
 
+## Repproduce
+
+**The results presented in the paper for NAS-Bench-Macro and Channel-Bench-Macro were generated using the code provided below. While we set the temperature to 0 in the code, it's important to note that there may still be some level of randomness present. Therefore, it's possible that the results obtained from running the code may not perfectly match the findings reported in the paper.**
+
+### * NAS-Bench-Macro 
+```
+python nas_bench_macro.py --openai_key {YOUR_OPENAI_API_KEY} --openai_organization {YOUR_OPENAI_ORGANIZATION}
+```
+
+### * Channel-Bench-Macro 
+```
+# For ResNet
+python channel_bench_res.py --openai_key {YOUR_OPENAI_API_KEY} --openai_organization {YOUR_OPENAI_ORGANIZATION}
+
+# For MobileNet
+python channel_bench_mob.py --openai_key {YOUR_OPENAI_API_KEY} --openai_organization {YOUR_OPENAI_ORGANIZATION}
+```
+
+
+
 ## Retrieve Performance From Benchmark
 
 ### * NAS-Bench-Macro 
