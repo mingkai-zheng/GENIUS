@@ -2,7 +2,7 @@
 
 For details, see [Paper Link](https://arxiv.org/pdf/2304.10970.pdf) by Mingkai Zheng, Xiu Su, Shan You, Fei Wang, Chen Qian, Chang Xu, and Samuel Albanie.
 
-## Repproduce
+## Reproduce
 
 **The results presented in the paper for NAS-Bench-Macro and Channel-Bench-Macro were generated using the code provided below. While we set the temperature to 0 in the code, it's important to note that there may still be some level of randomness present. Therefore, it's possible that the results obtained from running the code may not perfectly match the findings reported in the paper.**
 
