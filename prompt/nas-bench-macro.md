@@ -5,18 +5,15 @@
 You are an expert in the field of neural architecture search.
 
 ## User Prompt
-
+```
 Your task is to assist me in selecting the best operations for a given model architecture, which includes some undefined layers and available operations. The model will be trained and tested on CIFAR10, and your objective will be to maximize the model's performance on CIFAR10.
 
 We define the 3 available operations as the following:
-```
 0: Identity(in_channels, out_channels, stride)
 1: InvertedResidual(in_channels, out_channels, stride expansion=3, kernel_size=3)
 2: InvertedResidual(in_channels, out_channels, stride expansion=6, kernel_size=5)
-```
 
 The implementation of the Identity is as follows:
-```
 class Identity(nn.Module):
     def __init__(self, in_channels, out_channels, stride):
         super(Identity, self).__init__()
@@ -32,10 +29,8 @@ class Identity(nn.Module):
         if self.downsample is not None:
             x = self.downsample(x)
         return x
-```
 
 The implementation of the InvertedResidual is as follows:
-```
 class InvertedResidual(nn.Module):
     def __init__(self, in_channels, out_channels, stride, expansion, kernel_size):
         super(InvertedResidual, self).__init__()
@@ -56,10 +51,9 @@ class InvertedResidual(nn.Module):
         if self.use_shortcut:
             return self.conv(x) + x
         return self.conv(x)
-```
+        
 
 The model architecture will be defined as the following.
-```
 {
     layer1:  {defined: True,  operation: nn.Conv2d(in_channels=3,  out_channels=32, kernel_size=3, padding=1, bias=False)},
     layer2:  {defined: False, downsample: True , in_channels: 32,  out_channels: 64 , stride: 2},
@@ -74,10 +68,9 @@ The model architecture will be defined as the following.
     layer11: {defined: True,  operation: nn.AdaptiveAvgPool2d(output_size=1)},
     layer12: {defined: True,  operation: nn.Linear(in_features=1280, out_features=10)},
 }
-```
 
 The currently undefined layers are layer2 - layer9, and the in_channels and out_channels have already been defined for each layer. To maximize the model's performance on CIFAR10, please provide me with your suggested operation for the undefined layers only. 
 
 Your response should be an operation ID list for the undefined layers. For example:
-[1, 2, ..., 0] means we use operation 1 for layer2, operation 2 for layer3, ..., operation 0 for layer9. 
-
+[1, 2, ..., 0] means we use operation 1 for layer2, operation 2 for layer3, ..., operation 0 for layer9.
+```

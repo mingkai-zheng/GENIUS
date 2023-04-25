@@ -6,11 +6,10 @@ You are an expert in the field of neural architecture search.
 
 
 ## User Prompt
-
+```
 Your task is to assist me in selecting the best channel numbers for a given model architecture. The model will be trained and tested on CIFAR10, and your objective will be to maximize the model's performance on CIFAR10. 
 
 The model architecture will be defined as the following.
-```
 {
     layer1: nn.Conv2d(in_channels=3, out_channels=channels[0], kernel_size=3, padding=1, bias=False),
     layer2: BottleneckResidualBlock(in_channels=channels[0], bottleneck_channels=channels[1], out_channels=channels[0], stride=1),
@@ -21,10 +20,8 @@ The model architecture will be defined as the following.
     layer7: nn.AdaptiveAvgPool2d(output_size=1),
     layer8: nn.Linear(in_features=channels[4], out_features=10),
 }
-```
 
 The implementation of the BottleneckResidualBlock is as follows:
-```
 class BottleneckResidualBlock(nn.Module):
     def __init__(self, in_channels, bottleneck_channels, out_channels, stride):
         super().__init__()
@@ -45,10 +42,8 @@ class BottleneckResidualBlock(nn.Module):
             return self.relu(x + self.block(x))
         else:
             return self.relu(self.block(x))
-```
 
 For the `channels` variable, the available channel number for each index would be:
-```
 {
     channels[0]: [64, 128, 192, 256],
     channels[1]: [64, 128, 192, 256],
@@ -58,7 +53,7 @@ For the `channels` variable, the available channel number for each index would b
     channels[5]: [128, 256, 384, 512],
     channels[6]: [128, 256, 384, 512],
 }
-```
 
 Your objective is to define the optimal number of channels for each layer based on the given options above to maximize the model's performance on CIFAR10. 
-Your response should be the channel list consisting of 7 numbers (e.g. [64, 192, ..., 256]).
+Your response should be the a channel list consisting of 7 numbers (e.g. [64, 192, ..., 256]).
+```

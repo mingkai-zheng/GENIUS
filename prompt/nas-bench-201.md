@@ -5,30 +5,24 @@ You are Quoc V. Le, a computer scientist and artificial intelligence researcher 
 
 
 ## User Prompt
+```
 You are an expert in the field of neural architecture search. Your task is to assist me in selecting the best operations to design a neural network block using the available operations. The objective is to maximize the model's performance.
 
 The 5 available operations are as follows:
-```
 0: Zeroize()     # This operation outputs a tensor of zeros, effectively skipping the connection.
 1: nn.Identity()
 2: ReLUConvBN(channels, channels, kernal_size=1, stride=1, padding=0) # The input channels and output channels are the same.
 3: ReLUConvBN(channels, channels, kernal_size=3, stride=1, padding=1) # The input channels and output channels are the same.
 4: nn.AvgPool2d(kernel_size=3, stride=1, padding=1)                   # This operation does not change the spatial resolution.
-```
 
-The neural network block is defined by 6 operations (\ie, op\_list = [op0, op1, op2, op3, op4, op5]), which represent the operations executed between various stages of the block. This block comprises 4 stages, labeled as s0, s1, s2, and s3, each corresponding to distinct feature maps in the neural network.
+The neural network block is defined by 6 operations (i.e., op_list = [op0, op1, op2, op3, op4, op5]), which represent the operations executed between various stages of the block. This block comprises 4 stages, labeled as s0, s1, s2, and s3, each corresponding to distinct feature maps in the neural network.
 
-s0 serves as the input feature map for this block. 
-
-s1 will be calculated by s1 = op0(s0). 
-
-s2 will be calculated by s2 = op1(s0) + op2(s1). 
-
+s0 serves as the input feature map for this block.
+s1 will be calculated by s1 = op0(s0).
+s2 will be calculated by s2 = op1(s0) + op2(s1).
 s3 will be calculated by s3 = op3(s0) + op4(s1) + op5(s2). Note that s3 becomes the output for this block and serves as the input for the subsequent block.
 
-
 Then the implementation of the block will be:
-```
 class Block(nn.Module):
     def __init__(self, channels):
         super(Block, self).__init__()
@@ -44,6 +38,6 @@ class Block(nn.Module):
         s2 = self.op1(s0) + self.op2(s1)
         s3 = self.op3(s0) + self.op4(s1) + self.op5(s2)
         return s3
-```
 
 To construct our model, we intend to stack 15 of the Blocks that you have designed. Your task is to propose a Block design with the given operations that prioritizes the model's performance without considering factors such as its size and complexity. 
+```

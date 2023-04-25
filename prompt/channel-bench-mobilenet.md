@@ -6,9 +6,10 @@ You are an expert in the field of neural architecture search.
 
 
 ## User Prompt
+```
+Your task is to assist me in selecting the best channel numbers for a given model architecture. The model will be trained and tested on CIFAR10, and your objective will be to maximize the model's performance on CIFAR10. 
 
 The model architecture will be defined as the following.
-```
 {
     layer1: nn.Conv2d(in_channels=3, out_channels=channels[0], kernel_size=3, padding=1, bias=False),
     layer2: InvertedResidual(in_channels=channels[0], bottleneck_channels=channels[1], out_channels=channels[0], stride=1),
@@ -19,10 +20,8 @@ The model architecture will be defined as the following.
     layer7: nn.AdaptiveAvgPool2d(output_size=1),
     layer8: nn.Linear(in_features=channels[6], out_features=10),
 }
-```
 
 The implementation of the InvertedResidual is as follows:
-```
 class InvertedResidual(nn.Module):
     def __init__(self, in_channels, out_channels, bottleneck_channels, stride):
         super(InvertedResidual, self).__init__()
@@ -42,9 +41,8 @@ class InvertedResidual(nn.Module):
         if self.use_shortcut:
             return self.conv(x) + x
         return self.conv(x)
-```
+
 For the `channels` variable, the available channel number for each index would be:
-```
 {
     channels[0]: [32,  64,  96,  128],
     channels[1]: [192, 384, 576, 768],
@@ -54,6 +52,7 @@ For the `channels` variable, the available channel number for each index would b
     channels[5]: [384, 768, 1152, 1536],
     channels[6]: [256, 512, 768, 1024],
 }
-```
+
 Your objective is to define the optimal number of channels for each layer based on the given options above to maximize the model's performance on CIFAR10. 
 Your response should be the a channel list consisting of 7 numbers (e.g. [64, 576, ..., 256]).
+```
