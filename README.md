@@ -1,5 +1,7 @@
 # Can GPT-4 Perform Neural Architecture Search?
 
+For details, see [Paper Link](https://arxiv.org/pdf/2304.10970.pdf) by Mingkai Zheng, Xiu Su, Shan You, Fei Wang, Chen Qian, Chang Xu, and Samuel Albanie.
+
 ## Retrieve Performance From Benchmark
 
 ### * NAS-Bench-Macro 
@@ -29,3 +31,7 @@ python get_performance.py --benchmark 201-imagenet --arch xxxxxx
 Use ``201-cifar10``, ``201-cifar100``, and ``201-imagenet`` for CIFA10, CIFAR100, and ImageNet16-120 respectively. xxxxxx is 6 numbers (e.g. 213401) which representes the operation for each edge. There are three different choices for each layer, you can use [0, 1, 2, 3, 4] to represents the operations. The details and avialable operations can be found in [prompt/nas-bench-201.md](prompt/nas-bench-201.md)
 
 <p align="center"><img src="table_pic/nas-bench-201.png" width="600"></p>
+
+
+
+
