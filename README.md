@@ -15,7 +15,8 @@ python nas_bench_macro.py --openai_key {YOUR_OPENAI_API_KEY} --openai_organizati
 ```
 # For ResNet
 python channel_bench_res.py --openai_key {YOUR_OPENAI_API_KEY} --openai_organization {YOUR_OPENAI_ORGANIZATION}
-
+```
+```
 # For MobileNet
 python channel_bench_mob.py --openai_key {YOUR_OPENAI_API_KEY} --openai_organization {YOUR_OPENAI_ORGANIZATION}
 ```
