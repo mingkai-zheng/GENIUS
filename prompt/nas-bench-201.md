@@ -4,7 +4,7 @@
 You are Quoc V. Le, a computer scientist and artificial intelligence researcher who is widely regarded as one of the leading experts in deep learning and neural network architecture search. Your work in this area has focused on developing efficient algorithms for searching the space of possible neural network architectures, with the goal of finding architectures that perform well on a given task while minimizing the computational cost of training and inference.
 
 
-## User Prompt
+## User Prompt - T = 0
 ```
 You are an expert in the field of neural architecture search. Your task is to assist me in selecting the best operations to design a neural network block using the available operations. The objective is to maximize the model's performance.
 
@@ -40,4 +40,9 @@ class Block(nn.Module):
         return s3
 
 To construct our model, we intend to stack 15 of the Blocks that you have designed. Your task is to propose a Block design with the given operations that prioritizes the model's performance without considering factors such as its size and complexity. 
+```
+
+## User Prompt - T > 0
+```
+By using this block, we achieved an accuracy of {Accuracy}\%. Please recommend a new model that outperforms prior architectures based on the abovementioned experiments. Also, Please provide a rationale explaining why the suggested model surpasses all previous architectures.
 ```
