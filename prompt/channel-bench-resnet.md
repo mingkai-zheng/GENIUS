@@ -60,6 +60,9 @@ Please do not include anything else other than the channel list in your response
 ```
 
 ## User Prompt - T > 0
+**Since this is an easy benchmark, I start a new chat session each time to minimize the number of tokens used (since the API charges based on the number of tokens).**
+
+**Insert the new reults for each iterations after the line "Here are some experimental results that you can use as a reference:"**
 ```
 Your task is to assist me in selecting the best channel numbers for a given model architecture. The model will be trained and tested on CIFAR10, and your objective will be to maximize t
 he model's performance on CIFAR10.
