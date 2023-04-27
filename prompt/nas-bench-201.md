@@ -94,13 +94,3 @@ After you suggest a design, I will test its actual performance and provide you w
 ```
 By using this block, we achieved an accuracy of {Accuracy}\%. Please recommend a new model that outperforms prior architectures based on the abovementioned experiments. Also, Please provide a rationale explaining why the suggested model surpasses all previous architectures.
 ```
-
-## Reference
-```
-@article{zheng2023can,
-  title={Can GPT-4 Perform Neural Architecture Search?},
-  author={Zheng, Mingkai and Su, Xiu and You, Shan and Wang, Fei and Qian, Chen and Xu, Chang and Albanie, Samuel},
-  journal={arXiv preprint arXiv:2304.10970},
-  year={2023}
-}
-```

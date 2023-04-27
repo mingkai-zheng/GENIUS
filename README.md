@@ -53,6 +53,14 @@ Use ``201-cifar10``, ``201-cifar100``, and ``201-imagenet`` for CIFA10, CIFAR100
 
 <p align="center"><img src="table_pic/nas-bench-201.png" width="600"></p>
 
-
-
-
+## Reference
+```
+@misc{zheng2023gpt4,
+    title={Can GPT-4 Perform Neural Architecture Search?}, 
+    author={Mingkai Zheng and Xiu Su and Shan You and Fei Wang and Chen Qian and Chang Xu and Samuel Albanie},
+    year={2023},
+    eprint={2304.10970},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG}
+}
+```
