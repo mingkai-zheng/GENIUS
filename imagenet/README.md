@@ -2,7 +2,7 @@
 
 ## Requirement
 ```
-torch==1.13.1
+torch==1.13.0
 timm=0.6.12
 thop
 ```
@@ -13,8 +13,17 @@ We provide the complete chat history with GPT-4, including the conversations for
 
 
 ## Reproduce Retraining
-The training and evaluation results has been provided in [script/script.sh](./script/script.sh)
+To run the code, you need to change the Dataset setting (Imagenet function in [dataset/imagenet.py](./dataset/imagenet.py)), and Pytorch DDP setting (dist_init function in  [util/dist_utils.py](./util/dist_utils.py)) for your server environment.
 
+The distributed training of this code is based on slurm environment, we have provided the training and evaluation scripts in [script/script.sh](./script/script.sh)
+
+We also provide the pre-trained model.
+|          |FLOPs(M) | Param(M) | Top-1 Accuracy | Download  |
+|----------|:----:|:---:|:---:|:---:|
+|  GENIUS | 329 | 7.0 | 77.8% | [GENIUS-329.pth.tar](https://drive.google.com/file/d/1DbV27hWMq0aRl-SJ4vuphFduBQwr1RUr/view?usp=sharing) |
+|  GENIUS | 401 | 7.5 | 78.2% | [GENIUS-401.pth.tar](https://drive.google.com/file/d/1R-qp6XlebgQji3UtbJ5yrc4UT2Bg3fJw/view?usp=sharing) |
+
+If you want to test the pre-trained model, please download the weights from the link above, and move them to the checkpoints folder.
 
 
 ## Reference
