@@ -23,7 +23,7 @@ We also provide the pre-trained model.
 |  GENIUS | 329 | 7.0 | 77.8% | [GENIUS-329.pth.tar](https://drive.google.com/file/d/1DbV27hWMq0aRl-SJ4vuphFduBQwr1RUr/view?usp=sharing) |
 |  GENIUS | 401 | 7.5 | 78.2% | [GENIUS-401.pth.tar](https://drive.google.com/file/d/1R-qp6XlebgQji3UtbJ5yrc4UT2Bg3fJw/view?usp=sharing) |
 
-If you want to test the pre-trained model, please download the weights from the link above, and move them to the checkpoints folder.
+If you want to test the pre-trained model, please download the weights from the link above, and move them to the checkpoint folder.
 
 
 ## Reference
