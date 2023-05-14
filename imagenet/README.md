@@ -13,7 +13,7 @@ We provide the complete chat history with GPT-4, including the conversations for
 
 
 ## Reproduce Retraining
-To run the code, you need to change the Dataset setting (Imagenet function in [data/imagenet.py](./data/imagenet.py)), and Pytorch DDP setting (dist_init function in  [util/dist_utils.py](./util/dist_utils.py)) for your server environment.
+To run the code, you need to change the Dataset setting (Imagenet function in [data/imagenet.py](./data/imagenet.py)), and Pytorch DDP setting (dist_init function in  [util/dist_init.py](./util/dist_init.py)) for your server environment.
 
 The distributed training of this code is based on slurm environment, we have provided the training and evaluation scripts in [script/script.sh](./script/script.sh)
 
