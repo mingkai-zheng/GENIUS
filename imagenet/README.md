@@ -18,8 +18,8 @@ To run the code, you need to change the Dataset setting (Imagenet function in [d
 The distributed training of this code is based on slurm environment, we have provided the training and evaluation scripts in [script/script.sh](./script/script.sh)
 
 We also provide the pre-trained model.
-|          |FLOPs(M) | Param(M) | Top-1 Accuracy | Download  |
-|----------|:----:|:---:|:---:|:---:|
+| Model |FLOPs(M) | Param(M) | Top-1 Accuracy | Download  |
+|:------:|:----:|:---:|:---:|:---:|
 |  GENIUS-329 | 329 | 7.0 | 77.8% | [GENIUS-329.pth.tar](https://drive.google.com/file/d/1DbV27hWMq0aRl-SJ4vuphFduBQwr1RUr/view?usp=sharing) |
 |  GENIUS-402 | 401 | 7.5 | 78.2% | [GENIUS-401.pth.tar](https://drive.google.com/file/d/1R-qp6XlebgQji3UtbJ5yrc4UT2Bg3fJw/view?usp=sharing) |
 
