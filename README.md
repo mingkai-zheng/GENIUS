@@ -2,6 +2,9 @@
 
 For details, see [Paper Link](https://arxiv.org/pdf/2304.10970.pdf) by Mingkai Zheng, Xiu Su, Shan You, Fei Wang, Chen Qian, Chang Xu, and Samuel Albanie.
 
+## ImageNet Experiments
+Please refer to the [ImageNet experiments](imagenet/README.md) for further information.
+
 ## Reproduce
 **The results presented in the paper for NAS-Bench-Macro, Channel-Bench-Macro, and NAS-Bench-201 were generated using the code provided below. Although we set the temperature to 0 in the code, it is important to acknowledge that some level of randomness may persist. Consequently, the results obtained from executing the code may not perfectly match a specific experimental run in the paper. Nevertheless, as the code is run multiple times, the average performance should align with the overall performance reported in the paper.**
 
